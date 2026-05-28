@@ -1,0 +1,22 @@
+---
+# ============================================================
+# Perfil "default" — para desarrollo local con mvn spring-boot:run
+# ============================================================
+spring:
+  config.activate.on-profile: default
+  sql.init.platform: h2
+cds:
+  data-source.auto-config.enabled: false
+  security.enabled: false
+
+---
+# ============================================================
+# Perfil "cloud" — para Cloud Foundry (BTP)
+# ============================================================
+# Se activa cuando se setea SPRING_PROFILES_ACTIVE=cloud
+# (lo vamos a configurar en el mta.yaml más adelante)
+#
+# No necesita configuración explícita porque cds-starter-cloudfoundry
+# detecta HANA y XSUAA automáticamente desde VCAP_SERVICES.
+spring:
+  config.activate.on-profile: cloud

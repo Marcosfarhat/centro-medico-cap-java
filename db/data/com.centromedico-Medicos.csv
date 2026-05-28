@@ -1,0 +1,8 @@
+﻿ID;nombre;apellido;matricula;email;telefono;especialidad_ID
+m1000001-dddd-eeee-ffff-000000000001;Lucía;Martínez;MN12345;l.martinez@centromedico.com.ar;+54 11 4555-1001;e1000001-aaaa-bbbb-cccc-000000000001
+m1000002-dddd-eeee-ffff-000000000002;Ricardo;Gómez;MN23456;r.gomez@centromedico.com.ar;+54 11 4555-1002;e1000002-aaaa-bbbb-cccc-000000000002
+m1000003-dddd-eeee-ffff-000000000003;Sofía;Fernández;MN34567;s.fernandez@centromedico.com.ar;+54 11 4555-1003;e1000003-aaaa-bbbb-cccc-000000000003
+m1000004-dddd-eeee-ffff-000000000004;Juan Manuel;Rodríguez;MN45678;jm.rodriguez@centromedico.com.ar;+54 11 4555-1004;e1000004-aaaa-bbbb-cccc-000000000004
+m1000005-dddd-eeee-ffff-000000000005;Carolina;López;MN56789;c.lopez@centromedico.com.ar;+54 11 4555-1005;e1000005-aaaa-bbbb-cccc-000000000005
+m1000006-dddd-eeee-ffff-000000000006;Diego;Pérez;MN67890;d.perez@centromedico.com.ar;+54 11 4555-1006;e1000006-aaaa-bbbb-cccc-000000000006
+m1000007-dddd-eeee-ffff-000000000007;Valeria;Sosa;MN78901;v.sosa@centromedico.com.ar;+54 11 4555-1007;e1000001-aaaa-bbbb-cccc-000000000001
