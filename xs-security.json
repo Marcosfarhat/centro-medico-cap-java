@@ -1,0 +1,46 @@
+{
+  "xsappname": "centro-medico-btp",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "Administrador del centro medico"
+    },
+    {
+      "name": "$XSAPPNAME.paciente",
+      "description": "Paciente del centro medico"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "AdminRole",
+      "description": "Rol de administrador",
+      "scope-references": [
+        "$XSAPPNAME.admin"
+      ]
+    },
+    {
+      "name": "PacienteRole",
+      "description": "Rol de paciente",
+      "scope-references": [
+        "$XSAPPNAME.paciente"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "CentroMedico_Admin",
+      "description": "Coleccion de roles para administrador",
+      "role-template-references": [
+        "$XSAPPNAME.AdminRole"
+      ]
+    },
+    {
+      "name": "CentroMedico_Paciente",
+      "description": "Coleccion de roles para paciente",
+      "role-template-references": [
+        "$XSAPPNAME.PacienteRole"
+      ]
+    }
+  ]
+}
