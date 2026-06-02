@@ -9,8 +9,7 @@
     },
     {
       "source": "^/adminturnosui/(.*)$",
-      "target": "/adminturnosui/$1",
-      "service": "html5-apps-repo-rt",
+      "localDir": "adminturnosui",
       "authenticationType": "xsuaa"
     }
   ]
