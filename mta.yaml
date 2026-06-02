@@ -54,9 +54,6 @@ modules:
           name: srv-api
           url: ~{srv-url}
           forwardAuthToken: true
-    properties:
-      ADDITIONAL_DESTINATIONS: >
-        [{"name":"ui5","url":"https://ui5.sap.com","forwardAuthToken":false}]
 
   # ─── APP FIORI (HTML5 deployer) ──────────────────────────────────────────────
   - name: centro-medico-btp-ui-deployer

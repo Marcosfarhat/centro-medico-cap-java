@@ -8,8 +8,9 @@
       "authenticationType": "xsuaa"
     },
     {
-      "source": "^/adminturnosui/(.*)$",
-      "destination": "ui5",
+      "source": "^(/adminturnosui/.*)",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
     }
   ]
