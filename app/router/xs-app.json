@@ -3,14 +3,9 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/odata/(.*)$",
+      "source": "^(.*)$",
       "destination": "srv-api",
       "authenticationType": "xsuaa"
-    },
-    {
-      "source": "^/adminturnosui/(.*)$",
-      "localDir": "adminturnosui",
-      "authenticationType": "none"
     }
   ]
 }
