@@ -10,7 +10,7 @@
     {
       "source": "^/adminturnosui/(.*)$",
       "localDir": "adminturnosui",
-      "authenticationType": "xsuaa"
+      "authenticationType": "none"
     }
   ]
 }
