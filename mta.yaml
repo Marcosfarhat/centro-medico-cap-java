@@ -80,6 +80,7 @@ modules:
       commands:
         - npm install
         - npm run build
+        - node -e "const fs=require('fs');const path=require('path');const JSZip=require('jszip');const zip=new JSZip();const addFolder=(dir,base)=>{fs.readdirSync(dir).forEach(f=>{const full=path.join(dir,f);const rel=path.join(base,f);if(fs.statSync(full).isDirectory())addFolder(full,rel);else zip.file(rel.replace(/\\\\/g,'/'),fs.readFileSync(full));});};addFolder('dist','');zip.generateAsync({type:'nodebuffer'}).then(b=>{fs.writeFileSync('dist/adminturnosui.zip',b);});"
       supported-platforms: []
 
 resources:

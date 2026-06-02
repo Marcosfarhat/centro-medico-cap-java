@@ -13,12 +13,13 @@
     "@ui5/cli": "^4.0.33",
     "@sap/ux-ui5-tooling": "1",
     "@sap-ux/eslint-plugin-fiori-tools": "^10.0.0",
-    "eslint": "^10"
+    "eslint": "^10",
+    "jszip": "^3.10.1"
   },
   "scripts": {
     "start": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"index.html?sap-ui-xx-viewCache=false\"",
-    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
+    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist && node zip-dist.js",
     "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
   }
 }
