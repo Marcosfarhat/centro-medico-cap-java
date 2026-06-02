@@ -1,0 +1,12 @@
+{
+  "name": "centro-medico-db-deployer",
+  "version": "1.0.0",
+  "description": "HDI deployer for centro-medico",
+  "dependencies": {
+    "@sap/hdi-deploy": "^5",
+    "hdb": "^0.19"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/hdi-deploy/deploy.js"
+  }
+}
