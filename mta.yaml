@@ -11,8 +11,8 @@ modules:
     path: srv
     parameters:
       buildpack: sap_java_buildpack_jakarta
-      readiness-health-check-type: http
-      readiness-health-check-http-endpoint: /actuator/health
+      readiness-health-check-type: process
+      start-timeout: 300
     properties:
       SPRING_PROFILES_ACTIVE: cloud
       JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
@@ -47,19 +47,16 @@ modules:
       keep-existing-routes: true
     requires:
       - name: centro-medico-xsuaa
+      - name: centro-medico-html5-repo-runtime
       - name: srv-api
         group: destinations
         properties:
           name: srv-api
           url: ~{srv-url}
           forwardAuthToken: true
-      - name: centro-medico-html5-repo-runtime
-      - name: ui5
-        group: destinations
-        properties:
-          name: ui5
-          url: https://ui5.sap.com
-          forwardAuthToken: false
+    properties:
+      ADDITIONAL_DESTINATIONS: >
+        [{"name":"ui5","url":"https://ui5.sap.com","forwardAuthToken":false}]
 
   # ─── APP FIORI (HTML5 deployer) ──────────────────────────────────────────────
   - name: centro-medico-btp-ui-deployer
@@ -108,14 +105,14 @@ resources:
       service: hana
       service-plan: hdi-shared
 
-  # ─── HTML5 REPO HOST (almacena los archivos de la app Fiori) ────────────────
+  # ─── HTML5 REPO HOST ────────────────────────────────────────────────────────
   - name: centro-medico-html5-repo-host
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-host
 
-  # ─── HTML5 REPO RUNTIME (el AppRouter lo usa para servir los archivos) ──────
+  # ─── HTML5 REPO RUNTIME ─────────────────────────────────────────────────────
   - name: centro-medico-html5-repo-runtime
     type: org.cloudfoundry.managed-service
     parameters:
