@@ -1,0 +1,31 @@
+manifest-Version: 1.0
+Created-By: SAP Application Archive Builder 1.2.47
+
+Name: centro-medico-btp-srv/target/centro-medico-btp-exec.jar
+MTA-Module: centro-medico-btp-srv
+Content-Type: application/zip
+
+
+Name: centro-medico-btp-db-deployer/data.zip
+MTA-Module: centro-medico-btp-db-deployer
+Content-Type: application/zip
+
+
+Name: centro-medico-btp-approuter/data.zip
+MTA-Module: centro-medico-btp-approuter
+Content-Type: application/zip
+
+
+Name: centro-medico-btp-ui-deployer/resources/data.zip
+MTA-Module: centro-medico-btp-ui-deployer
+Content-Type: application/zip
+
+
+Name: xs-security.json
+MTA-Resource: centro-medico-xsuaa
+Content-Type: application/json
+
+
+Name: META-INF/mtad.yaml
+Content-Type: text/plain
+

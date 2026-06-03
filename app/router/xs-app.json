@@ -1,9 +1,33 @@
 {
-  "welcomeFile": "/adminturnosui/index.html",
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^(.*)$",
+      "source": "^/$",
+      "target": "/adminturnosui/index.html",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/odata/(.*)$",
+      "target": "/odata/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/sap/(.*)$",
+      "target": "/sap/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/adminturnosui/(.*)$",
+      "target": "/adminturnosui/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/adminturnosui/$1",
       "destination": "srv-api",
       "authenticationType": "xsuaa"
     }

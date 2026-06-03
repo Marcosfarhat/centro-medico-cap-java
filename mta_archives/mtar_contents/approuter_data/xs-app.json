@@ -1,0 +1,16 @@
+{
+  "welcomeFile": "/adminturnosui/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/odata/(.*)$",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/adminturnosui/(.*)$",
+      "localDir": "adminturnosui",
+      "authenticationType": "none"
+    }
+  ]
+}

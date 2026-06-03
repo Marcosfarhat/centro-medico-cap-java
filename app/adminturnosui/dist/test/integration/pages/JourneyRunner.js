@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/JourneyRunner","adminturnosui/test/integration/pages/TurnosList","adminturnosui/test/integration/pages/TurnosObjectPage"],function(n,t,e){"use strict";var s=new n({launchUrl:sap.ui.require.toUrl("adminturnosui")+"/test/flpSandbox.html#adminturnosui-tile",pages:{onTheTurnosList:t,onTheTurnosObjectPage:e},async:true});return s});
+//# sourceMappingURL=JourneyRunner.js.map
