@@ -5,7 +5,7 @@ description: Centro Medico BTP - CAP Java + Fiori Elements
 
 modules:
 
-  # ─── BACKEND CAP JAVA ───────────────────────────────────────────────────────
+  # â”€â”€â”€ BACKEND CAP JAVA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-btp-srv
     type: java
     path: srv
@@ -30,16 +30,16 @@ modules:
         properties:
           srv-url: ${default-url}
 
-  # ─── HANA DEPLOYER ──────────────────────────────────────────────────────────
+  # â”€â”€â”€ HANA DEPLOYER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-btp-db-deployer
     type: hdb
-    path: db
+    path: db/src/gen
     parameters:
       buildpack: nodejs_buildpack
     requires:
       - name: centro-medico-hana
 
-  # ─── APPROUTER ──────────────────────────────────────────────────────────────
+  # â”€â”€â”€ APPROUTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-btp-approuter
     type: approuter.nodejs
     path: app/router
@@ -55,7 +55,7 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
 
-  # ─── APP FIORI (HTML5 deployer) ──────────────────────────────────────────────
+  # â”€â”€â”€ APP FIORI (HTML5 deployer) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-btp-ui-deployer
     type: com.sap.application.content
     path: app
@@ -85,7 +85,7 @@ modules:
 
 resources:
 
-  # ─── XSUAA ──────────────────────────────────────────────────────────────────
+  # â”€â”€â”€ XSUAA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-xsuaa
     type: org.cloudfoundry.managed-service
     parameters:
@@ -96,21 +96,21 @@ resources:
         xsappname: centro-medico-btp
         tenant-mode: dedicated
 
-  # ─── HANA CLOUD ─────────────────────────────────────────────────────────────
+  # â”€â”€â”€ HANA CLOUD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-hana
     type: org.cloudfoundry.managed-service
     parameters:
       service: hana
       service-plan: hdi-shared
 
-  # ─── HTML5 REPO HOST ────────────────────────────────────────────────────────
+  # â”€â”€â”€ HTML5 REPO HOST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-html5-repo-host
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-host
 
-  # ─── HTML5 REPO RUNTIME ─────────────────────────────────────────────────────
+  # â”€â”€â”€ HTML5 REPO RUNTIME â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: centro-medico-html5-repo-runtime
     type: org.cloudfoundry.managed-service
     parameters:
